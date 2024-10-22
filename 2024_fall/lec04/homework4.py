@@ -10,7 +10,6 @@ def list_to_dict(input_list):
     for k,v in enumerate(input_list):
         output_dict[k]=v
     return output_dict
-    
 
 
 
