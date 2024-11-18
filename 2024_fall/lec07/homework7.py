@@ -18,6 +18,7 @@ def voiced_excitation(duration, F0, Fs):
     T0 = int(np.round(Fs/F0))
     excitation[::T0] = -1
     return excitation
+    
 
 def resonator(x, F, BW, Fs):
     '''
