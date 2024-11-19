@@ -12,9 +12,9 @@ def dft_matrix(N):
            W[k,n] = cos(2*np.pi*k*n/N) - j*sin(2*np.pi*k*n/N)
     '''
    
-    W = np.zeros((N,N)，dtype='complex')
-    for k in range(N): 
+    W = np.zeros((N,N), dtype='complex')
+    for k in range(N):
         for n in range(N):
-            W[k,n] = np.cos(2*np.pi*k*n/N) - (0+1j)*np.sin(2*пр.pi*k*n/N)
+    W[k,n]= np.cos(2*np.pi*k*n/N)-(0+1j)*np.sin(2*np.pi*k*n/N)
     return W
 
