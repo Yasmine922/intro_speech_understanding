@@ -86,7 +86,7 @@ def personal_assistant(lang, filename):
     elif lang=="ja":
         keywords = ["何時","冗談","何日","すみません、よくわかりませんでした"]
     elif lang=-"zh":
-        keywords =["几点","玩笑","什么日子","对不起，我没听懂你的话"]
+        keywords =["几奌","玩笑","什么日子","对不起，我没听懂你的话"]
     else:
         speech_package.synthesize("I don't know that language!","en",filename)
     return
