@@ -16,7 +16,7 @@ def extract_stories_from_NPR_text(text):
     stories = []
     for div_tag in npr_soup.find_all('div','story-text'):
         titletag = div_tag.find('h3', 'title')
-        teasertag = div_tag.find('p', "teaser')
+        teasertag = div_tag.find('p', 'teaser')
         
         if teasertag != None:
             stories.append((titletag.text, teasertag.text))
@@ -35,5 +35,5 @@ def read_nth_story(stories, n, filename):
 
     Output: None
     '''
-    gtts,gTTs(text=stories[n][0]+" "+stories[n][1], lang="en").save(filename)
+    gtts.gTTs(text=stories[n][0]+" "+stories[n][1], lang="en").save(filename)
     #raise RuntimeError('You need to write this part!')
