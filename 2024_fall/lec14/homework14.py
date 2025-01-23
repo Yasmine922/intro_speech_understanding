@@ -14,9 +14,9 @@ def what_time_is_it(lang, filename):
     if lang=="en":
         text = hour+" hours and "+minutes+" minutes"
     elif lang=="ja":
-        text = hour+"時"+minutes+"分です”
+        text = hour+"時"+minutes+"分です"
     elif lang=="zh":
-        text ="现在是"+hour+"点"+"分"
+        text = "现在是"+hour+"点"+"分"
     else:
         text="I'm sorry, I don't know that language"
     gtts.gTTs(text,lang=lang).save(filename)
@@ -31,7 +31,7 @@ def tell_me_a_joke(lang, audiofile):
     audiofile (str) - audiofile in which to record the joke
     '''
     #raise RuntimeError("You need to write this part!")
-    filename = 'jokes _%s.txt'%(lang)
+    filename = 'jokes_%s.txt'%(lang)
     with open(filename) as f:
         jokes = f.readlines()
     joke = random.choice(jokes)
@@ -85,7 +85,7 @@ def personal_assistant(lang, filename):
         keywords = ["what time", "joke", "what day", "I'm sorry, I didn't understand you"]
     elif lang=="ja":
         keywords = ["何時","冗談","何日","すみません、よくわかりませんでした"]
-    elif lang=-"zh":
+    elif lang=="zh":
         keywords =["几奌","玩笑","什么日子","对不起，我没听懂你的话"]
     else:
         speech_package.synthesize("I don't know that language!","en",filename)
@@ -97,7 +97,7 @@ def personal_assistant(lang, filename):
             what_time_is_it(lang, filename)
             break
         elif keywords[1] in text:
-            tell_me a_joke(lang, filename)
+            tell_me_a_joke(lang, filename)
             break
         elif keywords[2] in text:
             what_day_is_it(lang, filename)
